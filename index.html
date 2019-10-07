@@ -1,568 +1,607 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<script
-	  src="https://code.jquery.com/jquery-3.3.1.js"
-	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-	  crossorigin="anonymous"></script>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
-			
-	<style type="text/css">
-		body{
-			background: #fff;
-			overflow-x: hidden;
-			
-		}
-		.container-fluid{
-			padding: 0px;
-			background-color: #fff;
-		}
-		a img{
-			width: 20px;
-			height: 20px;
-			margin-left: 40%; 
-			filter: grayscale(100%) invert(40%) ;
-		}
-		#side-navbar{	
-			background:#fff;
-			padding-right: 0px;
-			padding-top:100px;
-			padding-left: 0px;
-			overflow-y: hidden;
-			height: 100%;
-			overflow-x: hidden;
-			filter: drop-shadow(2px -2px 2px lightgray);	
-
-		}
-		#icon{
-			height: 40px;
-			width: 40px;
-			margin: 0;
-			filter: grayscale(100%) invert(40%);
-		}
-		#side-navbar1{
-			background:#fff;
-			padding-right: 0px;
-			padding-top:0px;
-			padding-left: 0px;
-			overflow-y: hidden;
-			height: 100%;
-			
-			
-			overflow-x: hidden;
-			/*filter: drop-shadow(2px -2px 2px lightgray);*/
-		}
-		#main #navbar {
-			background: #fff;
-			padding: : 50px;
-			height: 75px;
-			width: 100%;
-			filter: drop-shadow(-2px 0px 2px lightgray);
-
-		}
-		nav img{
-			height: 30px;
-			width: 120px;
-			margin-top: 2%;
-			position: relative;
-			top: 70;
-			left: 10%;
-			filter: drop-shadow(0px 1px lightgray) invert(100%);
-		}
-		nav img:hover{
-			filter: grayscale(100%) invert(60%) sepia(100%)  saturate(8) hue-rotate(135deg);
-		}
-		.notification{
-			
-		}
-		.notification span{
-			margin-right: 7px;
-			background-color: red;
-			
-		}
-		span{
-			
-			z-index: 1;
-			position: relative;
-			left: -20;
-			top: 0;
-
-		}
-		
-		#icon,span{
-			filter: drop-shadow(-2px 0px 2px lightgray);
-
-
-		}
-		
-		#icon{
-			height: 40px;
-			width: 40px;
-			
-			filter: grayscale(100%) invert(40%);
-		}
-		#profile{
-			background-color: red;
-			height: 40px;
-			width: 40px;
-			color: #ccc;
-			border-radius: 50%;
-			
-			
-		}
-		#right{
-			
-			float: right;
-			margin-top: 20px
-
-		}
-		#right div{
-			vertical-align: middle;
-			
-		}
-		#icon:hover{
-			filter: grayscale(100%) invert(40%) sepia(100%)  saturate(8) hue-rotate(135deg);
-		}
-		.success {
-		  border-color: #0cc;
-		  color: #0cc;
-		  background-color: rgba(0,0,0,0);
-		  z-index: 1;
-		  filter: drop-shadow(-2px 0px 2px lightgray);
-		}
-		.success:hover {
-		  
-		  color: #fff;
-		  background-color: #0cc;
-
-		}
-		#main{
-			margin: 0px;
-			padding:0px;
-			background-color: #fff;
-			position: relative;
-			top: 0;
-			left: 100;
-
-			
-		}
-		#sidenav-links div{
-			display: block;
-			margin-bottom:5px; 
-			padding-top: 10px;
-			padding-bottom: 10px;
-			padding-left: 20px;
-		}
-		#sidenav-links div:hover{
-			background: #fff;
-
-
-		}
-		ul{
-			margin: 0px;
-			padding: 0px;
-		}
-
-		li{
-			display: inline;
-			margin: 0px;
-			padding: 0px;
-
-
-		}
-		td{
-			margin-left: 10px;
-		}
-		#sidenav-links div:hover a img{
-			filter: grayscale(100%) invert(40%) sepia(100%)  saturate(8) hue-rotate(135deg);
-
-		}
-		#card{
-			background-color: #fff;
-			margin-top: 100px;
-			padding: 10px;
-			border-radius:10px 
-		}
-		#card:hover{
-			
-			box-shadow: 0px 0px 3px gray;
-			
-			z-index: 1;
-			padding: 20px;
-			margin-top: 90px
-		
-		}
-		
-		
-	</style>			
-	<title></title>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+      
+  <style type="text/css">
+    body{
+      background: #fff;
+      overflow-x: hidden;
+      
+    }
+    .container-fluid{
+      padding: 0px;
+      background-color: #fff;
+    }
+    a img{
+      width: 20px;
+      height: 20px;
+      margin-left: 40%; 
+      filter: grayscale(100%) invert(40%) ;
+    }
+    #side-navbar{ 
+      background:#fff;
+      padding-right: 0px;
+      padding-top:100px;
+      padding-left: 0px;
+      overflow-y: hidden;
+      height: 100%;
+      overflow-x: hidden;
+      filter: drop-shadow(2px -2px 2px lightgray);  
+    }
+    #icon{
+      height: 40px;
+      width: 40px;
+      margin: 0;
+      filter: grayscale(100%) invert(40%);
+    }
+    #side-navbar1{
+      background:#fff;
+      padding-right: 0px;
+      padding-top:0px;
+      padding-left: 0px;
+      overflow-y: hidden;
+      height: 100%;
+      
+      
+      overflow-x: hidden;
+      /*filter: drop-shadow(2px -2px 2px lightgray);*/
+    }
+    #main #navbar {
+      background: #fff;
+      padding: : 50px;
+      height: 75px;
+      width: 100%;
+      filter: drop-shadow(-2px 0px 2px lightgray);
+    }
+    nav img{
+      height: 30px;
+      width: 120px;
+      margin-top: 2%;
+      position: relative;
+      top: 0%;
+      left: 10%;
+      filter: drop-shadow(0px 1px lightgray) invert(100%);
+    }
+    nav img:hover{
+      filter: grayscale(100%) invert(60%) sepia(100%)  saturate(8) hue-rotate(135deg);
+    }
+    .notification{
+      
+    }
+    .notification span{
+      margin-right: 7px;
+      background-color: red;
+      
+    }
+    span{
+      
+      z-index: 1;
+      position: relative;
+      left: -20;
+      top: 0;
+    }
+    
+    #icon,span{
+      filter: drop-shadow(-2px 0px 2px lightgray);
+    }
+    
+    #icon{
+      height: 40px;
+      width: 40px;
+      
+      filter: grayscale(100%) invert(40%);
+    }
+    #profile{
+      background-color: red;
+      height: 40px;
+      width: 40px;
+      color: #ccc;
+      border-radius: 50%;
+      
+      
+    }
+    #right{
+      
+      float: right;
+      margin-top: 20px
+    }
+    #right div{
+      vertical-align: middle;
+      
+    }
+    #icon:hover{
+      filter: grayscale(100%) invert(40%) sepia(100%)  saturate(8) hue-rotate(135deg);
+    }
+    .success {
+      border-color: #0cc;
+      color: #0cc;
+      background-color: rgba(0,0,0,0);
+      z-index: 1;
+      filter: drop-shadow(-2px 0px 2px lightgray);
+    }
+    .success:hover {
+      
+      color: #fff;
+      background-color: #0cc;
+    }
+    #main{
+      margin: 0px;
+      padding:0px;
+      background-color: #fff;
+      position: relative;
+      top: 0;
+      left: 0;
+      
+    }
+    #sidenav-links div{
+      display: block;
+      margin-bottom:5px; 
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+    }
+    #sidenav-links div:hover{
+      background: #fff;
+    }
+    ul{
+      margin: 0px;
+      padding: 0px;
+    }
+    li{
+      display: inline;
+      margin: 0px;
+      padding: 0px;
+    }
+    td{
+      margin-left: 10px;
+    }
+    #sidenav-links div:hover a img{
+      filter: grayscale(100%) invert(40%) sepia(100%)  saturate(8) hue-rotate(135deg);
+    }
+    #card{
+      background-color: #fff;
+      margin-top: 100px;
+      padding: 10px;
+      border-radius:10px 
+    }
+    #card:hover{
+      
+      box-shadow: 0px 0px 3px gray;
+      
+      z-index: 1;
+      
+    
+    }
+    .fa{
+      
+      height: 60px;
+      width: 60px;
+      padding: 0px;
+      filter: grayscale(100%) invert(40%);
+      font-size: 30px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .fa:hover{
+        filter: grayscale(100%) invert(40%) sepia(100%)  saturate(8) hue-rotate(135deg);
+        text-decoration: none;
+    }
+    #social{
+      margin-top: 100px;
+      margin-bottom: 10px;
+    }
+  </style>      
+  <title></title>
 </head>
 <body id="day">
 <div class="container-fluid">
-	<div class="col-lg-1" id="side-navbar">
-					<div id="side-navbar1">
-						<div id="sidenav-links">
-							<div class ="contentstore"><a href="#contentstore"><img src="image.png"/></div></a>
-							<div class="search"><a href="#search"><img src="search.png"/></a></div>
-							<div class="newpage"><a href="#newpage"><img src="shop.png"/></a></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-11" id="main">
-						<nav id="navbar" class="container-fluid" >
-								<img src="logo.png">
-								<div id="right">
-									<ul class="nav navbar-nav">
-										<li>
-											<div class="notification">
-												<img src="alarm.png" id="icon">
-												<span class="badge">500</span>
-											</div>											
-										</li>
-										<li>
-											<div class="btn-danger" id="profile"><center>AR</center></div>
-										</li>
-									
-									</ul>
-									
-								</div>
-								
-						</nav>
-						<div class="container-fluid" id="co" style="margin-top: 100px;">
-							
-								<div class="col-lg-1"></div>
-								<div class="col-lg-11">
-									<div>
-										<center><button id="dark" class="btn success">Dark Theme</button>
-											<button id="light" class="btn success">Light Theme</button></center>
-									</div>
-									<h1>Content Store</h1>
-									<div style="background-color: rgba(0,175,175,0.05); padding: 10px;">
-										<p>
-											<font color="#0cc" size="4">Got bulk orders or similer orders? Fill the order brief in an excel sheet</font><br/>
-											<font color="#999" size="3">
-												If you're wondering about an easy way to place orders in large numbers, we provide a way customized just for that.<br/>
-												Download our excel sheet, and fill the order brief in the prescribed format and submit. In case you need any help we<br/>
-												are just a <u>click away</u> to assist you in placing your order
-											</font>
-											
-										</p>
-										<button class="btn success">Order via Excel Sheet</button>
-									</div>
-									<hr/>
-									<div class="container">
-										
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-												<ul>
-													
-														<li>
-															<img src="pic.jpg" height="40" width="40" class="img-circle"/>
-														</li>
-														<li>
-															<p style="padding-top: 10px;"><b><font size="4">Blog/Article</font></b>
-														from 400</p>
-														</li>
-												    
-												    
-													
-														<li>
-															<p><font color="#999" size="3">
-																Typically 450-400 words, an e-book is
-																perfect for your target audience ranging
-																from prospective customers to users.
-															</font></p>
-														</li>
-													
-													
-														<li><button class="btn success">Order</button></li>
-													
-												</ul>
-												
-											
-											
-										</div>
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-												<ul>
-													
-														<li>
-															<img src="pic.jpg" height="40" width="40" class="img-circle"/>
-														</li>
-														<li>
-															<p style="padding-top: 10px;"><b><font size="4">Newsletter/Emailer</font></b>
-														from 1000</p>
-														</li>
-												    
-												    
-													
-														<li>
-															<p><font color="#999" size="3">
-																Typically 450-400 words, an e-book is
-																perfect for your target audience ranging
-																from prospective customers to users.
-															</font></p>
-														</li>
-													
-													
-														<li><button class="btn success">Order</button></li>
-													
-												</ul>
-												
-											
-											
-										</div>
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-												<ul>
-													
-														<li>
-															<img src="pic.jpg" height="40" width="40" class="img-circle"/>
-														</li>
-														<li>
-															<p style="padding-top: 10px;"><b><font size="4">Whitepaper</font></b>
-														from 2000</p>
-														</li>
-												    
-												    
-													
-														<li>
-															<p><font color="#999" size="3">
-																Typically 450-400 words, an e-book is
-																perfect for your target audience ranging
-																from prospective customers to users.
-															</font></p>
-														</li>
-													
-													
-														<li><button class="btn success">Order</button></li>
-													
-												</ul>
-												
-											
-											
-										</div>
-										
-									</div>
-									<div class="container">
-										
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-												<ul>
-													
-														<li>
-															<img src="pic.jpg" height="40" width="40" class="img-circle"/>
-														</li>
-														<li>
-															<p style="padding-top: 10px;"><b><font size="4">Wesite Content</font></b>
-														from 1000</p>
-														</li>
-												    
-												    
-													
-														<li>
-															<p><font color="#999" size="3">
-																Typically 450-400 words, an e-book is
-																perfect for your target audience ranging
-																from prospective customers to users.
-															</font></p>
-														</li>
-													
-													
-														<li><button class="btn success">Order</button></li>
-													
-												</ul>
-												
-											
-											
-										</div>
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-												<ul>
-													
-														<li>
-															<img src="pic.jpg" height="40" width="40" class="img-circle"/>
-														</li>
-														<li>
-															<p style="padding-top: 10px;"><b><font size="4">Video Script</font></b>
-														from 1000</p>
-														</li>
-												    
-												    
-													
-														<li>
-															<p><font color="#999" size="3">
-																Typically 450-400 words, an e-book is
-																perfect for your target audience ranging
-																from prospective customers to users.
-															</font></p>
-														</li>
-													
-													
-														<li><button class="btn success">Order</button></li>
-													
-												</ul>
-												
-											
-											
-										</div>
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-												<ul>
-													
-														<li>
-															<img src="pic.jpg" height="40" width="40" class="img-circle"/>
-														</li>
-														<li>
-															<p style="padding-top: 10px;"><b><font size="4">Company Profile/Brochure</font></b>
-														from 1000</p>
-														</li>
-												    
-												    
-													
-														<li>
-															<p><font color="#999" size="3">
-																Typically 450-400 words, an e-book is
-																perfect for your target audience ranging
-																from prospective customers to users.
-															</font></p>
-														</li>
-													
-													
-														<li><button class="btn success">Order</button></li>
-													
-												</ul>
-												
-											
-											
-										</div>
-										
-									</div>
-									<div class="container">
-										
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-												<ul>
-													
-														<li>
-															<img src="pic.jpg" height="40" width="40" class="img-circle"/>
-														</li>
-														<li>
-															<p style="padding-top: 10px;"><b><font size="4">Press Release</font></b>
-														from 200</p>
-														</li>
-												    
-												    
-													
-														<li>
-															<p><font color="#999" size="3">
-																Typically 450-400 words, an e-book is
-																perfect for your target audience ranging
-																from prospective customers to users.
-															</font></p>
-														</li>
-													
-													
-														<li><button class="btn success">Order</button></li>
-													
-												</ul>
-												
-											
-											
-										</div>
-										<div class="col-lg-4" id="card">
-											<div>
-												
-											</div>
-											
-										
-									</div>
-									
-								
-								</div>
-							
-						</div>
-					
-				</div>
-					
-			
-				
-		</div>
-		<div>
-												
-											</div>
-		<div class="container">
-      <div class="rows">
-        <div class="col-lg-3">
-          <img src="twitter.png" height="50" width="50">
+  <div class="col-lg-1" id="side-navbar">
+          <div id="side-navba">
+            <div id="sidenav-links">
+              <div class="contentstore"><a href="#contentstore"><img src="image.png"></a></div>
+              <div class="search"><a href="#search"><img src="search.png"></a></div>
+              <div class="newpage"><a href="#newpage"><img src="Shop.png"></a></div>
+            </div>
+          </div>
         </div>
-      </div>
-<div class="rows">
-        <div class="col-lg-3">
-          <img src="linkedin.png" height="50" width="50">
-        </div>
-      </div>
-      <div class="rows">
-        <div class="col-lg-3">
-          <img src="facebook.png" height="50" width="50">
-        </div>
-      </div>
-      <div class="rows">
-        <div class="col-lg-3">
-          <img src="instagram.png" height="50" width="50">
-        </div>
-      </div>
-    </div> 
-		<div class="container">
-      <div class="rows">
-        <div class="col-lg-12">
-        <h5><center>Copyright @ 2019 White Panda India Pvt. Ltd.</center></h5>
-        <br />
-        <h5><center>All Rights Reserved.</center></h5>
-        </div>
-      </div>
-       <div class="rows">
-        <div class="col-lg-12">
-        <h5><center> <u>Privacy Policy |</u> <u>Terms of Service |</u> <u>Service Agreement |</u> <u>Contact Us</u></center> </h5>
-        </div>
-      </div>
+        <div class="col-lg-11" id="main">
+            <nav id="navbar" class="container-fluid">
+                <img src="logo.png">
+                <div id="right">
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <div class="notification">
+                        <img src="alarm.png" id="icon">
+                        <span class="badge">500</span>
+                      </div>                      
+                    </li>
+                    <li>
+                      <div class="btn-danger" id="profile"><center>AR</center></div>
+                    </li>
+                  
+                  </ul>
+                  
+                </div>
+                
+            </nav>
+            <div class="container-fluid" id="co" style="margin-top: 100px;">
+              <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-9">
+                    <center><button id="dark" class="btn success">Dark Theme</button>
+                      <button id="light" class="btn success">Light Theme</button></center>
+                </div>
+                <div class="col-lg-2"></div>
+              </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-11">
+                  <h1>Content Store</h1>
+                  <div style="background-color: rgba(0,175,175,0.05); padding: 10px;">
+                    <p>
+                      <font color="#0cc" size="4">Got bulk orders or similer orders? Fill the order brief in an excel sheet</font><br>
+                      <font color="#999" size="3">
+                        If you're wondering about an easy way to place orders in large numbers, we provide a way customized just for that.<br>
+                        Download our excel sheet, and fill the order brief in the prescribed format and submit. In case you need any help we<br>
+                        are just a <u>click away</u> to assist you in placing your order
+                      </font>
+                      
+                    </p>
+                    <button class="btn success">Order via Excel Sheet</button>
+                  </div>
+                  <hr>
+                  <div class="container">
+                    
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Blog/Article</font></b>
+                            from 400</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                        
+                      
+                      
+                    </div>
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Newsletter/Emailer</font></b>
+                            from 1000</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                        
+                      
+                      
+                    </div>
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Whitepaper</font></b>
+                            from 2000</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                        
+                      
+                      
+                    </div>
+                    
+                  </div>
+                  <div class="container">
+                    
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Wesite Content</font></b>
+                            from 1000</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                        
+                      
+                      
+                    </div>
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Video Script</font></b>
+                            from 1000</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                        
+                      
+                      
+                    </div>
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Company Profile/Brochure</font></b>
+                            from 1000</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                        
+                      
+                      
+                    </div>
+                    
+                  </div>
+                  <div class="container">
+                    
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Press Release</font></b>
+                            from 200</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                        
+                      
+                      
+                    </div>
+                    
+                    <div class="col-lg-4" id="card">
+                      <div>
+                        
+                      </div>
+                        <ul>
+                          
+                            <li>
+                              <img src="pic.jpg" height="40" width="40" class="img-circle">
+                            </li>
+                            <li>
+                              <p style="padding-top: 10px;"><b><font size="4">Press Release</font></b>
+                            from 200</p>
+                            </li>
+                            
+                            
+                          
+                            <li>
+                              <p><font color="#999" size="3">
+                                Typically 450-400 words, an e-book is
+                                perfect for your target audience ranging
+                                from prospective customers to users.
+                              </font></p>
+                            </li>
+                          
+                          
+                            <li><button class="btn success">Order</button></li>
+                          
+                        </ul>
+                      
+                      
+                    </div>
+                  
+                
+                </div>
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#dark").click(function(){
-				$("body").css("filter","invert(80%)");
-				
+                
+            </div>
+          
+        </div>
+          
+      
+        
+    </div>
+    <div>
+                        
+    </div>
+              <div class="container" id="footer">
+                  <div class="col-lg-12" id="social">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                      <center>
+                        <ul>
+                          <li><a href="" class="fa fa-facebook"></a></li>
+                          <li><a href="" class="fa fa-linkedin"></a></li>
+                          <li><a href="" class="fa fa-twitter"></a></li>
+                          <li><a href="" class="fa fa-instagram"></a></li>
+                        </ul>
+                      </center>
+                      
+                    </div>
+                    <div class="col-lg-3"></div>
+                  </div>
+                  <div class="col-lg-12" id="copyright">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                      <div><center>
+                        <p style=" color: #999">Copyright @ 2019 White Panda Media Pvt. Ltd.<br>
+                        All rights reserved</p></center>
+                      </div>
+                        
+                      
+                    </div>
+                    <div class="col-lg-3"></div>
+                  </div>
+                  <div class="col-lg-12" id="links">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6" style="margin-bottom: 30px;">
+                      <center>
+                      <nav>
+                        
+                          <a href="">Privacy policy</a>|
+                          <a href="">Terms of service</a>|
+                          <a href="">Service Agreement</a>|
+                          <a href="">Contact us</a>
+                        
+                      </nav>
+                      </center>
+                      
+                        
+                      
+                    </div>
+                    <div class="col-lg-3"></div>
+                  </div>
+                  
+                </div>
+    
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#dark").click(function(){
+        $("body").css("filter","invert(90%)");
+        
+      });
+      $("#light").click(function(){
+        
+        $("body").css("filter","invert(0%)");
+        ;
+        
+      });
+      
+    });
+  </script>
 
-			});
-			$("#light").click(function(){
-				
-				$("body").css("filter","invert(0%)");
-				;
-				
 
-			});
-			
-		});
-	</script>
-</body>
-</html>
+</div></body></html>
